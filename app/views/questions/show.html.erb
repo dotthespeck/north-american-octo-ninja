@@ -1,0 +1,12 @@
+<div>
+<h1><%= @question.title %></h1>
+<h2><%= @question.description %></h2>
+<h5><%= @question.user.name %></h5>
+</div>
+
+<div>
+<% @question.answers.each do |answer| %>
+<h2><%= answer.answer %></h2>
+<h5><%= answer.user.name %></h5>
+<% end %>
+</div>

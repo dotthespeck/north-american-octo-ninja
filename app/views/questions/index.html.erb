@@ -1,11 +1,18 @@
-<h1 font size="10">SpaceOverflow</h1>
+<div>
+  <a href="/questions/new"><button>Ask a new question</button></a>
+</div>
 
+<div>
 <% @questions.each do |question| %>
-<h2><%= question.title %></h2>
-  <h3>Question: <%= question.description %></h3>
+<h3><a href="/questions/<%=question.id%>"><%= question.title %></a></h2>
+  <h2>Question: <%= question.description %></h3>
   <p>User: <%= question.user.name %></p>
+</div>
+
+<div>
   <% question.answers.each do |answer| %>
     <h2>Answer: <%= answer.answer %></h2>
     <p>User: <%= answer.user.name %></p>
     <% end %>
     <% end %>
+</div>

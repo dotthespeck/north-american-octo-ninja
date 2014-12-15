@@ -15,5 +15,9 @@
  */
 
 h1 {
-  font-size: 8em;
+  font-size: 3em;
+}
+
+a {
+  text-decoration: none;
 }
