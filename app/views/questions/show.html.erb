@@ -5,6 +5,18 @@
 </div>
 
 <div>
+
+<%=button_to "Delete", @question, method: :delete, data: { confirm: "Are you sure?"}%>
+
+</div>
+
+<div>
+<a href="/questions/<%= @question.id %>/answers/new"><button>Submit an answer</button></a>
+</div>
+
+<%=button_to "Edit", edit_question_path(@question) %>
+
+<div>
 <% @question.answers.each do |answer| %>
 <h2><%= answer.answer %></h2>
 <h5><%= answer.user.name %></h5>
