@@ -1,18 +1,19 @@
-<div>
-<a href="/questions/new"><button class="new">Ask a new question</button></a>
+<div class="questions">
+<a href="/questions/new">Ask a new question</a>
 </div>
 
 <div>
 <% @questions.each do |question| %>
-<a href="/questions/<%=question.id%>"><h3><%= question.title %> from <%= question.user.name %></h3></a>
+<a href="/questions/<%=question.id%>"><h2><%= question.title %> from <%= question.user.name %></h2></a>
   <h4>Question: <%= question.description %></h4>
-  <a href="/questions/<%=question.id%>/answers/new"><button>Submit an answer</button></a>
+  <div class="button">
+  <a href="/questions/<%=question.id%>/answers/new">Submit an answer</a>
+  </div>
 </div>
 
 <div>
   <% question.answers.each do |answer| %>
-    <h2>Answer: <%= answer.answer %></h2>
-    <p>User: <%= answer.user.name %></p>
+    <h4>Answer: <%= answer.answer %> from <%= answer.user.name %></h4>
     <% end %>
     <% end %>
 </div>

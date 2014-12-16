@@ -14,7 +14,6 @@
  *= require_self
  */
 
-h2,
 h3,
 h4,
 h5 {
@@ -28,18 +27,24 @@ button {
     color:#fff;
     font-family:'Futura',sans-serif;
     font-size:16px;
-    border:1px solid #459A00
   }
 
-button.new {
-    background:#5CCD00;
-    padding:10px 15px;
-    color:#fff;
-    font-family:'Futura',sans-serif;
-    font-size:24px;
-    border:1px solid #459A00;
+div.questions {
+  background:#5CCD00;
+  color:#fff;
+  font-family:'Futura',sans-serif;
+  font-size:36px;
+  margin: 0 auto;
+  text-align: center;
   }
 
+div.button {
+  background:#5CCD00;
+  color:#fff;
+  font-family:'Futura',sans-serif;
+  font-size:16px;
+  display: inline-block;
+}
 
 h1.header {
   font-size: 5em;
@@ -48,6 +53,14 @@ h1.header {
   font-family: Copperplate;
   font-weight: 700;
   background-color: #6100E8;
+}
+
+h2 {
+  color: #E815C4;
+  font-family: Didot, serif;
+  font-size: 2em;
+  background-color: #FFF96A;
+  font-weight: 700;
 }
 
 a {

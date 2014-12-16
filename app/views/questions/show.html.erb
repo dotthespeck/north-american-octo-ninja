@@ -4,17 +4,17 @@
 <h5><%= @question.user.name %></h5>
 </div>
 
-<div>
-
-<%=button_to "Delete", @question, method: :delete, data: { confirm: "Are you sure?"}%>
-
+<div class="button">
+<%= link_to "Delete", @question, method: :delete, data: { confirm: "Are you sure?"}%>
 </div>
 
-<div>
-<a href="/questions/<%= @question.id %>/answers/new"><button>Submit an answer</button></a>
+<div class="button">
+<a href="/questions/<%= @question.id %>/answers/new">Submit an answer</a>
 </div>
 
-<%=button_to "Edit", edit_question_path(@question) %>
+<div class="button">
+<%= link_to "Edit", edit_question_path(@question) %>
+</div>
 
 <div>
 <% @question.answers.each do |answer| %>
