@@ -1,24 +1,32 @@
 <div>
 <h1><%= @question.title %></h1>
 <h2><%= @question.description %></h2>
-<h5><%= @question.user.name %></h5>
+<h5><%= @question.user.email %></h5>
 </div>
 
-<div class="button">
-<%= link_to "Delete", @question, method: :delete, data: { confirm: "Are you sure?"}%>
-</div>
+<% if current_user %>
+  <% if current_user.id == @question.user_id %>
+    <div class="button">
+        <%= link_to "Delete", @question, method: :delete, data: { confirm: "Are you sure?"}%>
+    </div>
+  <% end %>
+<% end %>
 
 <div class="button">
 <a href="/questions/<%= @question.id %>/answers/new">Submit an answer</a>
 </div>
 
-<div class="button">
-<%= link_to "Edit", edit_question_path(@question) %>
-</div>
+<% if current_user %>
+  <% if current_user.id == @question.user_id %>
+    <div class="button">
+      <%= link_to "Edit", edit_question_path(@question) %>
+    </div>
+  <% end %>
+<% end %>
 
 <div>
 <% @question.answers.each do |answer| %>
 <h2><%= answer.answer %></h2>
-<h5><%= answer.user.name %></h5>
+<h5><%= answer.user.email %></h5>
 <% end %>
 </div>

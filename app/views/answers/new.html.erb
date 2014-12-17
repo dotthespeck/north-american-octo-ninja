@@ -3,7 +3,7 @@
 <div>
 <h2><%= @question.title %></h2>
 <h3><%= @question.description %></h3>
-<h5><%= @question.user.name %></h5>
+<h5><%= @question.user.email %></h5>
 </div>
 
 <%= form_for([@question, @answer]) do |f| %>

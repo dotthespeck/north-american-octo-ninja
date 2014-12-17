@@ -1,8 +1,7 @@
 class QuestionsController < ApplicationController
 
-  def current_user_id
-    1
-  end
+  before_action :authenticate_user!, only: [:destroy, :delete, :new, :create, :edit, :update]
+
 
   def index
     @questions = Question.all.order(created_at: :desc)
@@ -16,7 +15,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    @question.user_id = current_user_id
+    @question.user_id = current_user.id
     if @question.save
       redirect_to @question, :notice => "Question was successfully created"
     else
@@ -27,6 +26,9 @@ class QuestionsController < ApplicationController
   def edit
     id = params[:id]
     @question = Question.find(id)
+    if current_user.id != @question.user_id
+      redirect_to @question, notice: "Quit trying to edit Marlon's questions, you jerk cats."
+    end
   end
 
   def update
